@@ -140,7 +140,7 @@ public:
 /* Дан вектор чисел, требуется выяснить, сколько среди них различных.
  * Постараться использовать максимально быстрый алгоритм */
 
-void printV(vector<int>& v) {
+void printVector(vector<int>& v) {
     vector<int> :: iterator it;
     for (it = v.begin(); it != (v.begin(), v.end()); it++) {
         cout << *it << " ";
@@ -270,12 +270,12 @@ int main()
 
     cout << "This is a vector of numbers: ";
     vector<int> v{2, 5, 5, 7, 9, 1, 3, 9, 4, 0, 8, 7, 1};
-    printV(v);
+    printVector(v);
     cout << endl;
     cout << "Let's sort the vector by removing the duplicate numbers: ";
     sort(v.begin(), v.end());
     v.erase(unique(v.begin(), v.end()), v.end());
-    printV(v);
+    printVector(v);
     cout << "\n" << "Different numbers: " << v.size() << endl;
 
     return 0;
