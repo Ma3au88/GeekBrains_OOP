@@ -145,14 +145,12 @@ public:
         if (containsAce && total <=11) {
             total += 10;
         }
-
         return total;
     }
 
 class GenericPlayer : public Hand {
 protected:
     string m_name;
-    Hand m_player;
 public:
     GenericPlayer(const string& name = "");
     virtual ~GenericPlayer();
@@ -166,18 +164,11 @@ GenericPlayer::GenericPlayer(const string& name) : m_name(name) {}
 GenericPlayer::~GenericPlayer() {}
 
 bool GenericPlayer::IsBoosted() const {
-    int playerTotal = m_player.GetTotal();
-    if (playerTotal > 21)
-        return 1;
-    else
-        return 0;
+    return (GetTotal() > 21);
 }
 
 void GenericPlayer::Bust() const {
-    int playerTotal = m_player.GetTotal();
-    if (IsBoosted()) {
-    cout << m_name << " busts!\n";
-    }
+    cout << m_name << " busts! \n";
 }
 
 int main()
